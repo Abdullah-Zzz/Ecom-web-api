@@ -1,10 +1,10 @@
 {
    "version": 2,
-   "name": "tourist-web",
+   "name": "ecom-web",
    "builds": [
-      { "src": "node.js", "use": "@vercel/node" }
+      { "src": "server.js", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/node.js" }
+      { "src": "/(.*)", "dest": "/server.js" }
    ]
 }

@@ -155,7 +155,7 @@ const handleLogin = async (req, res) => {
                     const JWT_TOKEN = jwt.sign({ email: emailExists.email }, JWT_KEY, {
                         expiresIn: "10min"
                     })
-                    res.setHeader('Set-Cookie', `myCookie=${JWT_TOKEN}; Max-Age=600; path=/;SameSite=None;Secure`)
+                    res.setHeader('Set-Cookie', `myCookie=${JWT_TOKEN}; Max-Age=600; path=/;SameSite=None;`)
                     await userSchema.findOneAndUpdate({ email: email }, { $set: { token:[JWT_TOKEN] } })
                     res.status(200).json({ message: "Logged in" })
                 }

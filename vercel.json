@@ -1,0 +1,10 @@
+{
+   "version": 2,
+   "name": "tourist-web",
+   "builds": [
+      { "src": "node.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/(.*)", "dest": "/node.js" }
+   ]
+}

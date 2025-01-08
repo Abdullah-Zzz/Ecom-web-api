@@ -146,7 +146,7 @@ const handleLogin = async (req, res) => {
         const cookie = req.headers.cookie
         const emailExists = await userSchema.findOne({ email: email })
 
-        if (cookie) {
+        if (cookie && emailExists.token[0] && emailExists.token[0] == cookie ) {
             res.status(401).json({ message: "Already Logged in" })
         }
         else {
